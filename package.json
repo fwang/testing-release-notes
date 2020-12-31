@@ -1,10 +1,13 @@
 {
   "name": "base",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "release": "^6.3.0"
+  }
 }
