@@ -14,4 +14,4 @@ jobs:
     - name: Generate changelog
       env:
         GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
-      run: npx changelog
+      run: npx lerna-changelog
