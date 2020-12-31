@@ -1,1 +1,1 @@
-console.log("Hello World Alpha v3");
+console.log("Hello World v3");
