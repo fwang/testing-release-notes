@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - env:
-        GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
-    - run: |
-        npm ci
-        npx lerna-changelog
+      - uses: actions/checkout@v2
+      - env:
+          GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          npm ci
+          npx lerna-changelog
