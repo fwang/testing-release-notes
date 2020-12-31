@@ -12,5 +12,6 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Generate changelog
-      env: GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
       run: npx changelog
