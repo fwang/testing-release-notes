@@ -9,8 +9,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - env:
+        env:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
+        run: |
           npm ci
           npx lerna-changelog
