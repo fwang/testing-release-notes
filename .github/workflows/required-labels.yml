@@ -1,17 +1,32 @@
-name: Label
+name: Enforce PR labels
+
 on:
   pull_request:
-    types: [opened, labeled, unlabeled, synchronize]
+    types: [labeled, unlabeled, opened, edited, synchronize]
 jobs:
-  required:
+  enforce-label:
     runs-on: ubuntu-latest
     steps:
-      - uses: mheap/github-action-required-labels@v1
-        with:
-          mode: exactly
-          count: 1
-          labels: "breaking, enhancement, bug, documentation, internal"
+    - uses: yogevbd/enforce-label-action@2.2.1
+      with:
+        REQUIRED_LABELS_ANY: "breaking, enhancement, bug, documentation, internal"
+        REQUIRED_LABELS_ANY_DESCRIPTION: "Select at least one label ['breaking','enhancement','bug','documentation','internal','skip-changelog']"
+        #BANNED_LABELS: "banned"
 
+#name: Label
+#on:
+#  pull_request:
+#    types: [opened, labeled, unlabeled, synchronize]
+#jobs:
+#  required:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: mheap/github-action-required-labels@v1
+#        with:
+#          mode: exactly
+#          count: 1
+#          labels: "breaking, enhancement, bug, documentation, internal"
+#
 #name: Release Drafter
 #
 #on:
