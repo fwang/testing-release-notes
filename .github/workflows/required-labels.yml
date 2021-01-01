@@ -3,12 +3,15 @@ on:
   pull_request:
    types: [opened, labeled, unlabeled, synchronize]
 
-  jobs:
-    uses: jesusvasquez333/verify-pr-label-action@v1.3.1
-    with:
-      github-token: '${{ secrets.GITHUB_TOKEN }}'
-      pull-request-number: '${{ github.event.pull_request.number }}'
-      valid-labels: 'breaking, enhancement, bug, documentation, internal'
+jobs:
+  required:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jesusvasquez333/verify-pr-label-action@v1.3.1
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          pull-request-number: '${{ github.event.pull_request.number }}'
+          valid-labels: 'breaking, enhancement, bug, documentation, internal'
 
 #name: Label
 #on:
